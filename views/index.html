@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crud Test From Scratch</title>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css">
+	<script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="vendor/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="static/app.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header">Crud Test From Scratch</h1>
+		<br>
+		<form action="/stuff" method="POST">
+			<input name="name[name]" id="name" type="text" placeholder="Name"/>
+			<input name="size[size]" id="size" type="number" placeholder="42"/>
+			<input type="submit"/>
+		</form>
+		<br>
+		<ul id="object_placeholder" class="list-group"></ul>
+		<script type="text/template" id="stuff_template">
+			<li class="list-group-item" ><%=_id%> --- <%=name%> -- <%=size%>
+			<button class="btn btn-xs pull-right" onclick="deleteThing(this)" data-_id="<%=_id%>">X</button></li>
+		</script>
+	</div>
+</body>
+</html>
